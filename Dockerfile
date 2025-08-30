@@ -1,5 +1,5 @@
 # Use the official Elixir image
-FROM hexpm/elixir:1.15.7-erlang-26.1.2-debian-bullseye-20231009-slim
+FROM hexpm/elixir:1.18.4-erlang-26.1.2-debian-bullseye-20231009-slim
 
 # Install build dependencies
 RUN apt-get update -y && apt-get install -y build-essential git curl nodejs npm \
@@ -61,7 +61,7 @@ WORKDIR "/app"
 RUN chown nobody /app
 
 # Copy the release from build stage
-COPY --from=0 --chown=nobody:root /app/_build/prod/rel/YOUR_APP_NAME ./
+COPY --from=0 --chown=nobody:root /app/_build/prod/rel/mention_score ./
 
 USER nobody
 
