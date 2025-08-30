@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="[scrollbar-gutter:stable]">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <meta
+      name="description"
+      content="Get your GEO score and personalized tips to help your site appear in AI answers from ChatGPT, Perplexity, and Gemini."
+    />
+    <.live_title default="MentionScore | " suffix="Track Your Website's AI Mentions & GEO Score">
+      {assigns[:page_title]}
+    </.live_title>
+    <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
+    </script>
+  </head>
+  <body class="bg-white">
+    <%= if @conn.request_path not in ["/dashboard", "/users/log_in", "/users/register", "/users/reset_password"] do %>
+      <div class="border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0">
+              <a href="/">
+                <img src={~p"/images/ms-logo.png"} class="mx-auto h-12" alt="Logo" />
+              </a>
+            </div>
+
+            <nav class="hidden md:flex space-x-8">
+              <a
+                href="/#features"
+                class="text-gray-600 hover:text-black font-medium transition-colors"
+              >
+                Features
+              </a>
+              <a
+                href="/#pricing"
+                class="text-gray-600 hover:text-black font-medium transition-colors"
+              >
+                Pricing
+              </a>
+              <a
+                href="/#how-it-works"
+                class="text-gray-600 hover:text-black font-medium transition-colors"
+              >
+                How It Works
+              </a>
+              <a
+                href="/contact-us"
+                class="text-gray-600 hover:text-black font-medium transition-colors"
+              >
+                Contact Us
+              </a>
+              <a
+                href="https://mentionscore.tawk.help/"
+                target="_blank"
+                class="text-gray-600 hover:text-black font-medium transition-colors"
+              >
+                Help Center
+              </a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+              <a href="/dashboard" class="text-gray-600 hover:text-black font-medium">Login</a>
+              <a
+                href="/dashboard"
+                class="bg-black text-white px-6 py-2 rounded-xl font-medium hover:bg-gray-800 transition-all duration-200 transform hover:scale-105"
+              >
+                Run a Free Scan
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%!-- <ul class="relative z-10 flex items-center gap-4 px-4 sm:px-6 lg:px-8 justify-end">
+      <%= if @current_user do %>
+        <li class="text-[0.8125rem] leading-6 text-zinc-900">
+          {@current_user.email}
+        </li>
+        <li>
+          <.link
+            href={~p"/users/settings"}
+            class="text-[0.8125rem] leading-6 text-zinc-900 font-semibold hover:text-zinc-700"
+          >
+            Settings
+          </.link>
+        </li>
+        <li>
+          <.link
+            href={~p"/users/log_out"}
+            method="delete"
+            class="text-[0.8125rem] leading-6 text-zinc-900 font-semibold hover:text-zinc-700"
+          >
+            Log out
+          </.link>
+        </li>
+      <% else %>
+        <li>
+          <.link
+            href={~p"/users/register"}
+            class="text-[0.8125rem] leading-6 text-zinc-900 font-semibold hover:text-zinc-700"
+          >
+            Register
+          </.link>
+        </li>
+        <li>
+          <.link
+            href={~p"/users/log_in"}
+            class="text-[0.8125rem] leading-6 text-zinc-900 font-semibold hover:text-zinc-700"
+          >
+            Log in
+          </.link>
+        </li>
+      <% end %>
+    </ul> --%>
+    {@inner_content}
+  </body>
+</html>

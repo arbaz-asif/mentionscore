@@ -1,0 +1,5 @@
+version: 1
+stack: gigalixir-20
+buildpacks:
+  - phoenix_static_buildpack
+  - gigalixir_buildpack_elixir

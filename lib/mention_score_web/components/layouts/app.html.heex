@@ -1,0 +1,30 @@
+<%!-- <header class="border-b border-gray-200 bg-white sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0">
+          <img src={~p"/images/ms-logo.png"} class="mx-auto h-12" alt="Logo" />
+        </div>
+        
+        <nav class="hidden md:flex space-x-8">
+          <a href="#features" class="text-gray-600 hover:text-black font-medium transition-colors">Features</a>
+          <a href="#pricing" class="text-gray-600 hover:text-black font-medium transition-colors">Pricing</a>
+          <a href="#how-it-works" class="text-gray-600 hover:text-black font-medium transition-colors">How It Works</a>
+          <a href="/contact-us" class="text-gray-600 hover:text-black font-medium transition-colors">Contact Us</a>
+          <a href="https://mentionscore.tawk.help/" target="_blank" class="text-gray-600 hover:text-black font-medium transition-colors">Help Center</a>
+        </nav>
+        
+        <div class="flex items-center space-x-4">
+          <a href="/dashboard" class="text-gray-600 hover:text-black font-medium">Login</a>
+          <a href="/users/register" class="bg-black text-white px-6 py-2 rounded-xl font-medium hover:bg-gray-800 transition-all duration-200 transform hover:scale-105">
+            Run a Free Scan
+          </a>
+        </div>
+      </div>
+    </div>
+  </header> --%>
+<main>
+  <div>
+    <.flash_group flash={@flash} />
+    {@inner_content}
+  </div>
+</main>
