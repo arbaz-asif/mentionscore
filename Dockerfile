@@ -1,5 +1,5 @@
 # ---- Build stage ----
-FROM hexpm/elixir:1.16.2-erlang-26.2.5-alpine-3.19 AS build
+FROM hexpm/elixir:1.18.1-erlang-27.0.1-alpine-3.21.0 AS build
 
 # Install build tools
 RUN apk add --no-cache build-base git npm nodejs
