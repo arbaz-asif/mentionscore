@@ -28,10 +28,16 @@ if config_env() == :prod do
       For example: ecto://USER:PASS@HOST/DATABASE
       """
 
+      db_ssl=
+        case System.get_env("DATABASE_SSL") do
+          "true" -> true
+            _-> false
+        end
+
   maybe_ipv6 = if System.get_env("ECTO_IPV6") in ~w(true 1), do: [:inet6], else: []
 
   config :mention_score, MentionScore.Repo,
-    # ssl: true,
+    ssl: db_ssl,
     url: database_url,
     pool_size: String.to_integer(System.get_env("POOL_SIZE") || "2"),
     socket_options: maybe_ipv6
